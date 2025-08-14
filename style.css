@@ -63,3 +63,7 @@ body {
 .site-footer a:hover {
     text-decoration: underline;
 }
+/* --- Lógica de visualización --- */
+.hidden {
+    display: none;
+}

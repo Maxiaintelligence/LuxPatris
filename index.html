@@ -5,26 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Instalación | Lux Patris</title>
     
-    <!-- Enlace a nuestra hoja de estilos CSS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Enlace a nuestro archivo JavaScript. 'defer' hace que cargue al final para mejor rendimiento. -->
     <script src="script.js" defer></script>
 </head>
 <body>
 
     <header class="site-header">
-        <!-- Aquí pondremos el logo más adelante -->
         <h1>Guía de Instalación Lux Patris</h1>
     </header>
 
     <main class="site-content">
-        <!-- El contenido dinámico (instrucciones por SO) se generará aquí -->
-        <p>Detectando tu sistema operativo...</p>
+        
+        <!-- =============================================================== -->
+        <!-- NUEVO: Contenedores para las instrucciones. Por defecto ocultos -->
+        <!-- =============================================================== -->
+
+        <!-- Contenedor para Android -->
+        <div id="android-instructions" class="instructions-container hidden">
+            <h2>Paso a paso para Android</h2>
+            <p>Aquí irán las instrucciones detalladas para instalar en Android.</p>
+        </div>
+
+        <!-- Contenedor para iOS -->
+        <div id="ios-instructions" class="instructions-container hidden">
+            <h2>Paso a paso para iPhone/iPad</h2>
+            <p>Aquí irán las instrucciones detalladas para instalar en iOS.</p>
+        </div>
+
+        <!-- Contenedor para Escritorio (Windows, Mac, Linux) -->
+        <div id="desktop-instructions" class="instructions-container hidden">
+            <h2>Paso a paso para PC y Mac</h2>
+            <p>Aquí irán las instrucciones detalladas para instalar en tu computadora.</p>
+        </div>
+
     </main>
 
     <footer class="site-footer">
-        <a href="httpsa://wa.me/527716293255" target="_blank">¿Necesitas ayuda? Habla con nosotros por WhatsApp</a>
+        <!-- Corregí un pequeño error en el enlace de WhatsApp -->
+        <a href="https://wa.me/527716293255" target="_blank">¿Necesitas ayuda? Habla con nosotros por WhatsApp</a>
     </footer>
 
 </body>
