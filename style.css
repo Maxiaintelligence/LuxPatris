@@ -159,3 +159,29 @@ body {
     height: 28px;
     fill: currentColor;
 }
+/* --- Estilos para la etiqueta del FAB (Callout) --- */
+.fab .fab-label {
+    position: absolute;
+    right: 75px; /* Posición a la izquierda del botón */
+    bottom: 12px;
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+    opacity: 0; /* Por defecto está oculto */
+    
+    /* Le aplicamos la animación */
+    animation: fade-in-out 7s ease-in-out forwards;
+}
+
+/* --- Animación para aparecer y desaparecer --- */
+@keyframes fade-in-out {
+    0% { opacity: 0; transform: translateX(10px); }
+    15% { opacity: 1; transform: translateX(0); } /* Aparece */
+    85% { opacity: 1; transform: translateX(0); } /* Se mantiene visible */
+    100% { opacity: 0; transform: translateX(10px); } /* Desaparece */
+}
