@@ -172,10 +172,9 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     white-space: nowrap; /* Evita que el texto se parta en dos líneas */
-    opacity: 0; /* Por defecto está oculto */
     
-    /* Le aplicamos la animación */
-    animation: fade-in-out 7s ease-in-out forwards;
+    /* CAMBIO 3: Hacemos la etiqueta permanentemente visible */
+    opacity: 1; 
 }
 
 /* --- Animación para aparecer y desaparecer --- */
