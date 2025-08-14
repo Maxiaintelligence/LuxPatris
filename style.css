@@ -1,11 +1,14 @@
-/* --- Requisitos del Usuario: Paleta de Colores y Fuentes --- */
+/* --- Paleta de Colores y Fuentes Base --- */
 :root {
-    --color-primario: #1A2954; /* Azul Oscuro del logo */
-    --color-secundario: #7BA3C8; /* Azul Claro del logo */
-    --color-acento: #C2A97A;    /* Beige/Dorado del logo */
+    --color-primario: #1A2954;
+    --color-secundario: #7BA3C8;
+    --color-acento: #C2A97A;
     --color-blanco: #FFFFFF;
     --color-texto: #333333;
-    --fuente-base-size: 16px; /* Requisito de legibilidad */
+    --color-fondo: #f0f2f5; /* Un gris muy claro para el fondo */
+    --color-whatsapp: #25D366;
+    --fuente-base-size: 16px;
+    --border-radius: 12px;
 }
 
 /* --- Reseteo Básico y Estilos Globales --- */
@@ -17,98 +20,93 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #f4f7f6;
+    background-color: var(--color-fondo);
     color: var(--color-texto);
     font-size: var(--fuente-base-size);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
+    line-height: 1.7; /* Aumentamos el interlineado para legibilidad */
 }
 
-/* --- Estructura Principal: Header, Main, Footer --- */
+/* --- Estructura Principal: Header, Main --- */
 .site-header {
     background-color: var(--color-primario);
     color: var(--color-blanco);
     padding: 1.5rem 1rem;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .site-header h1 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .site-content {
-    flex: 1; /* Permite que el contenido principal crezca y empuje el footer hacia abajo */
     width: 100%;
-    max-width: 800px; /* Ancho máximo para que no se vea demasiado ancho en PC */
-    margin: 0 auto; /* Centra el contenido */
+    max-width: 800px;
+    margin: 0 auto;
     padding: 2rem 1rem;
 }
 
-.site-footer {
-    background-color: #e9ecef;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem; /* 14.4px */
-}
-
-.site-footer p {
-    margin: 0;
-}
-
-/* --- Lógica de visualización --- */
-.hidden {
-    display: none;
-}
-
-/* --- ESTILOS PARA EL CONTENIDO DE LA FASE 4 --- */
-
-/* Estilos para los contenedores de instrucciones */
-.instructions-container {
-    text-align: left; /* Alineamos el texto a la izquierda dentro de cada caja */
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+/* --- Estilo de Tarjeta Profesional --- */
+.card {
     background-color: var(--color-blanco);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    text-align: left;
+    border: 1px solid #e7eaf3;
 }
 
-.instructions-container h2 {
-    text-align: center; /* El título principal de la caja sí lo centramos */
+/* --- Estilos dentro de las tarjetas --- */
+.card h2 {
+    text-align: center;
     margin-bottom: 1.5rem;
     color: var(--color-primario);
+    font-size: 1.8rem;
 }
 
-.instructions-container p {
+.card h4 {
+    color: var(--color-primario);
+    font-size: 1.3rem;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-fondo);
 }
 
-/* Estilos para las listas numeradas y con viñetas */
-.instructions-container ol, .instructions-container ul {
-    padding-left: 25px; /* Indentación de la lista */
+.card h5 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card p { margin-bottom: 1rem; }
+
+.card ol, .card ul {
+    padding-left: 20px;
     margin-bottom: 1.5rem;
 }
 
-.instructions-container li {
-    margin-bottom: 1rem; /* Espacio entre cada paso de la lista */
-    line-height: 1.7;
-}
+.card li { margin-bottom: 1rem; }
 
-/* Estilos para los iconos pequeños dentro del texto */
-.instructions-container img, .common-help img {
-    height: 1.2em; /* La altura se ajusta al tamaño del texto */
-    vertical-align: -0.2em; /* Alineación vertical fina */
+.card ul { list-style-type: none; padding-left: 5px; }
+
+/* Iconos en línea (Safari, etc.) */
+.card img {
+    height: 1.3em;
+    vertical-align: -0.3em;
     margin: 0 4px;
 }
 
-/* Estilos para el botón de acción principal */
+/* --- Botón de Acción Principal --- */
 .btn.btn-primary {
-    display: block; /* Ocupa todo el ancho disponible */
+    display: block;
     width: 100%;
-    padding: 14px 20px;
-    margin: 2rem auto 0 auto; /* Espacio arriba y abajo del botón */
-    max-width: 400px; /* Ancho máximo para el botón */
-    font-size: 1.2rem; /* Texto del botón más grande */
+    max-width: 450px;
+    padding: 15px 20px;
+    margin: 2.5rem auto 0 auto;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -117,53 +115,47 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 .btn.btn-primary:hover, .btn.btn-primary:focus {
-    background-color: var(--color-secundario); /* Cambio de color al pasar el ratón */
+    background-color: var(--color-secundario);
     color: var(--color-primario);
+    box-shadow: 0 5px 15px rgba(123, 163, 200, 0.4);
+    transform: translateY(-2px);
 }
 
 .btn.btn-primary:active {
-    transform: scale(0.98); /* Efecto de "pulsado" */
+    transform: translateY(0) scale(0.98);
 }
 
+/* --- Lógica de Ocultar --- */
+.hidden { display: none; }
 
-/* Estilos para las secciones de ayuda comunes */
-.common-help {
-    text-align: left;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #e9ecef;
+/* --- Botón de Acción Flotante (FAB) para WhatsApp --- */
+.fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-whatsapp);
+    color: var(--color-blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease-in-out;
 }
 
-.common-help h4 {
-    color: var(--color-primario);
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+.fab:hover {
+    transform: scale(1.1);
 }
 
-.common-help h5 {
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.common-help ul {
-    list-style-type: none; /* Quitamos las viñetas por defecto */
-    padding-left: 0;
-}
-
-.common-help li {
-    margin-bottom: 0.75rem;
-}
-
-.common-help a {
-    color: var(--color-primario);
-    text-decoration: underline;
-}
-
-.common-help a:hover {
-    color: var(--color-secundario);
+.fab svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
 }
